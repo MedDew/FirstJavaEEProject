@@ -8,5 +8,13 @@
 
     <body>
         <p>Ceci est une page générée depuis une JSP.</p>
+        <%
+        	String attr = (String) request.getAttribute("test");
+        	out.print(attr);
+        	
+        	String auteur = request.getParameter("auteur");
+        	out.println("<br/>");
+        	out.println("Auteur : "+auteur);
+        %>
     </body>
 </html>
