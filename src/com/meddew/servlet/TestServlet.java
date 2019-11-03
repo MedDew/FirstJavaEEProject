@@ -14,7 +14,7 @@ public class TestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//super.doGet(req, resp);
-		resp.setContentType("text/html");
+		/*resp.setContentType("text/html");
 		resp.setCharacterEncoding( "UTF-8" );
 		PrintWriter out = resp.getWriter();
 		out.println("<!DOCTYPE html>");
@@ -26,7 +26,9 @@ public class TestServlet extends HttpServlet {
 		out.println("<body>");
 		out.println("<p>Ceci est une page générée depuis une servlet.</p>");
 		out.println("</body>");
-		out.println("</html>");
+		out.println("</html>");*/
+		System.out.print(this.getServletName()); 
+		this.getServletContext().getRequestDispatcher("/WEB-INF/test.jsp").forward(req, resp);
 	}
  
 }
