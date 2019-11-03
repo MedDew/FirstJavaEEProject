@@ -27,6 +27,9 @@ public class TestServlet extends HttpServlet {
 		out.println("<p>Ceci est une page générée depuis une servlet.</p>");
 		out.println("</body>");
 		out.println("</html>");*/
+		String auteur = req.getParameter("auteur");
+		String message = "Transmission de variable OK!" + auteur;
+		req.setAttribute("test", message);
 		System.out.print(this.getServletName()); 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/test.jsp").forward(req, resp);
 	}
