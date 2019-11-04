@@ -43,5 +43,41 @@
 		\${ empty 'test' ? 'vide' : 'non  vide'  } : ${ empty 'test' ? 'vide' : 'non  vide'  } <!-- La chaîne testée n'est pas vide, non vide est affiché --><br />
 		
     </p>
+    
+    <p>
+   		
+		<!-- L'expression EL suivante n'affiche rien si la propriété "prenom" n'a pas été initialisée,
+		et n'affiche rien si l'objet "coyote" n'a pas été initialisé : -->
+		${ coyote.prenom }
+		
+    	
+    	<jsp:useBean id="coyote" class="com.meddew.beans.Coyote" scope="request"></jsp:useBean>
+    	<!-- La scriptlet suivante affiche "null" si la propriété "prenom" n'a pas été initialisée, 
+		et provoque une erreur à la compilation si l'objet "coyote" n'a pas été initialisé : -->
+		<%= coyote.getPrenom() %>
+		<!-- L'action suivante affiche "null" si la propriété "prenom" n'a pas été initialisée, 
+		et provoque une erreur à l'exécution si l'objet "coyote" n'a pas été initialisé : -->
+		<jsp:getProperty name="coyote" property="prenom" />
+		
+		
+		
+    	<jsp:setProperty property="prenom" name="coyote" value="Lenny BOY"/>
+    	<jsp:getProperty property="prenom" name="coyote" />
+    	<%-- Cette ligne est équivalente à celle du dessus --%>
+    	<br/>
+    	${ coyote.prenom }
+    	<br/>
+    	
+    	<!-- Syntaxe conseillée pour récupérer la propriété 'prenom' du bean 'coyote'. -->
+		${ coyote.prenom }
+    	<br/>
+		
+		<!-- Syntaxe correcte, car il est possible d'expliciter la méthode d'accès à la propriété. Préférez toutefois la notation précédente. -->
+		${ coyote.getPrenom() }
+    	<br/>
+		
+		<!-- Syntaxe erronée : la première lettre de la propriété doit être une minuscule. -->
+		<%-- ${ coyote.Prenom } --%>
+    </p>
     </body>
 </html>
