@@ -147,5 +147,14 @@
 			<%-- coyote.setNom( request.getParameter("nom") ); --%>
 			<%-- coyote.setPrenom( request.getParameter("prenom") ); --%>
 			<%-- coyote.setGenius( Boolean.valueOf( request.getParameter("genius") ) ); --%>
+			
+			<%-- Le forwarding vers une page de l'application fonctionne par URL relative : --%>
+			<%-- <jsp:forward page="/page.jsp" /> --%>
+			
+			<%-- Son équivalent en code Java  est : --%>
+			<%-- request.getRequestDispatcher( "/page.jsp" ).forward( request, response ); --%>
+			
+			<%-- Et il est impossible de rediriger vers un site externe comme ci-dessous :  --%>
+			<%-- <jsp:forward page="http://www.siteduzero.com" /> --%>
     </body>
 </html>
