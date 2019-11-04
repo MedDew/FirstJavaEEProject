@@ -25,5 +25,6 @@
 	        	out.println("Coyote rusé : "+coyote.getNom()+" "+coyote.getPrenom());
         	%>
         </p>
+        <%-- Ceci est un commentaire JSP, non visible dans la page HTML finale.  --%>
     </body>
 </html>
