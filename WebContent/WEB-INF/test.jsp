@@ -26,5 +26,22 @@
         	%>
         </p>
         <%-- Ceci est un commentaire JSP, non visible dans la page HTML finale.  --%>
+        <%!
+        	//Déclartion d'une variable dans une jsp
+        	String str = "Une chaine";
+        	private String getString(String s){
+        		return str+" "+s;
+        	}
+        	public String getString(){
+        		return str;
+        	}
+        %>
+        <%
+        	out.println("Utilisation d'une varibale créee dans une jsp : "+str);
+        	out.println("<br/>");
+        	out.println("Utilisation d'une method private créee dans une jsp : "+getString("de caractère"));
+        	out.println("<br/>");
+        	out.println("Utilisation d'une method public créee dans une jsp : "+getString());
+        %>
     </body>
 </html>
