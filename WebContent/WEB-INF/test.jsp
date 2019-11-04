@@ -76,5 +76,16 @@
 				    request.setAttribute( "coyote", coyote2 );
 				}
 			--%>
+			<jsp:useBean id="coyote3" class="com.meddew.beans.Coyote" scope="request">
+				<%-- Ici, vous pouvez placer ce que vous voulez : 
+        		définir des propriétés, créer d'autres objets, etc. --%>
+   				<p>Nouveau bean créé !</p>
+   				coyote3.setNom("Bean Name");
+			</jsp:useBean>
+			<br/>
+			<span>Coyote3 Nom:</span>
+			<%= coyote3.getNom()  %>
+			<span>Coyote Nom:</span>
+			<%= coyote.getNom() %>
     </body>
 </html>
