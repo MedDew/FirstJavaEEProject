@@ -9,6 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!--<jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>*.jsp</url-pattern>
+  		<el-ignored>true</el-ignored>
+  	</jsp-property-group>
+  </jsp-config>-->
+  
   <servlet>
     <description>Ma première servlet de test.</description>
   	<servlet-name>TestServlet</servlet-name>
