@@ -35,12 +35,16 @@ public class TestServlet extends HttpServlet {
 		//Coyote coyote3 = new Coyote();
 		//coyote3.setNom("Gaz");
 		//coyote3.setPrenom("Med");
+		Coyote coyote4 = new Coyote();
+		coyote4.setNom("Boy");
+		coyote4.setPrenom("Lenny");
 		
 		String auteur = req.getParameter("auteur");
 		String message = "Transmission de variable OK!" + auteur;
 		req.setAttribute("test", message);
 		req.setAttribute("coyote", coyote);
 		//req.setAttribute("coyote3", coyote3);
+		req.setAttribute("coyote4", coyote4);
 		
 		System.out.print("Servlet Name : "+this.getServletName()); 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/test.jsp").forward(req, resp);
