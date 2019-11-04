@@ -62,5 +62,19 @@
 		<% out.println("YAWP Buddy !"); %>
 		<%-- Raccourci 	balise scriptlet  --%>
 		<%= "YAWP Buddy !" %>
+		
+		
+		<%-- L'action suivante récupère un bean de type Coyote et nommé "coyote" dans
+			la portée requête s'il existe, ou en crée un sinon. --%>
+			<jsp:useBean id="coyote2" class="com.meddew.beans.Coyote" scope="request" />
+			
+			<%-- Elle a le même effet que le code Java suivant : --%>
+			<%--
+				com.meddew.beans.Coyote coyote2 = (com.meddew.beans.Coyote) request.getAttribute( "coyote" ); 
+				if ( coyote2 == null ){
+				    coyote2 = new com.meddew.beans.Coyote();
+				    request.setAttribute( "coyote", coyote2 );
+				}
+			--%>
     </body>
 </html>
