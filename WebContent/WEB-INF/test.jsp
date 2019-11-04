@@ -95,5 +95,57 @@
 
 			<%-- Elle a le même effet que le code Java suivant : --%>
 			<%= coyote4.getPrenom() %>
+			
+			
+			<%-- L'action suivante associe une valeur à la propriété 'nom' du bean 'coyote4' : --%>
+			<jsp:setProperty property="nom" name="coyote4" value="Beastie Boy"/>
+			
+			<%-- Elle a le même effet que le code Java suivant : --%>
+			<%-- coyote.setPrenom("Beastie Boy"); --%>
+            <br/>
+			<jsp:getProperty name="coyote4" property="nom" />
+            <br/>
+			
+			<%-- L'action suivante associe directement la valeur récupérée
+			depuis le paramètre de la requête nommé ici 'prenomCoyote' à la propriété 'prenom' : 
+			http://localhost:8080/FirstJavaEEProject/test?prenomCoyote=Buddy
+			--%>
+			<jsp:setProperty name="coyote4" property="prenom" param="prenomCoyote"/>
+			<br/>
+			<jsp:getProperty name="coyote4" property="prenom" />
+            <br/>
+			
+			<%-- Elle a le même effet que le code Java suivant : --%>
+			<%-- coyote.setPrenom( request.getParameter("prenomCoyote") ); --%>
+			
+			
+			<%-- L'action suivante associe directement la valeur récupérée
+			depuis le paramètre de la requête nommé ici 'prenom' à la propriété de même nom : 
+			http://localhost:8080/FirstJavaEEProject/test?prenom=Alia
+			--%>
+			<jsp:setProperty name="coyote4" property="prenom" />
+			<br/>
+			<jsp:getProperty name="coyote4" property="prenom" />
+            <br/>
+			
+			<%-- Elle a le même effet que le code Java suivant : --%>
+			<%-- coyote.setPrenom( request.getParameter("prenom") ); --%>
+			
+			
+			<%-- L'action suivante associe automatiquement la valeur récupérée
+			depuis chaque paramètre de la requête à la propriété de même nom : 
+			http://localhost:8080/FirstJavaEEProject/test?prenom=Alia&nom=Longo&genius=1
+			--%>
+			<jsp:setProperty name="coyote4" property="*" />
+			<br/>
+			<jsp:getProperty name="coyote4" property="nom" />
+			<jsp:getProperty name="coyote4" property="prenom" />
+			<jsp:getProperty name="coyote4" property="genius" />
+            <br/>
+			 
+			<%-- Elle a le même effet que le code Java suivant : --%> 
+			<%-- coyote.setNom( request.getParameter("nom") ); --%>
+			<%-- coyote.setPrenom( request.getParameter("prenom") ); --%>
+			<%-- coyote.setGenius( Boolean.valueOf( request.getParameter("genius") ) ); --%>
     </body>
 </html>
