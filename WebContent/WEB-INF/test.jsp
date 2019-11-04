@@ -57,5 +57,10 @@
 		    <br />
 	    	<input type="submit" value="Valider" />
 		</form>
+		
+		<%-- Balise scriptlet  --%>
+		<% out.println("YAWP Buddy !"); %>
+		<%-- Raccourci 	balise scriptlet  --%>
+		<%= "YAWP Buddy !" %>
     </body>
 </html>
