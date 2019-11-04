@@ -86,6 +86,14 @@
              <%= coyote3.getNom()  %>
              <span>Coyote Nom:</span>
              <%= coyote.getNom() %>
-			
+             
+             <br/>
+			<jsp:useBean id="coyote4" class="com.meddew.beans.Coyote" scope="request"></jsp:useBean>
+			<%-- L'action suivante affiche le contenu de la propriété 'prenom' du bean 'coyote' : --%>
+			<jsp:getProperty name="coyote4" property="prenom" />
+            <br/>
+
+			<%-- Elle a le même effet que le code Java suivant : --%>
+			<%= coyote4.getPrenom() %>
     </body>
 </html>
