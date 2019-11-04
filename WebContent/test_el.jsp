@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -78,6 +80,21 @@
 		
 		<!-- Syntaxe erronée : la première lettre de la propriété doit être une minuscule. -->
 		<%-- ${ coyote.Prenom } --%>
+    </p>
+    <p>
+    	<%
+    		List<String> legumes = new ArrayList();
+    		legumes.add("poireau");
+    		legumes.add("haricot");
+    		legumes.add("carotte");
+    		legumes.add("pomme de terre");
+    		request.setAttribute("legumes", legumes);
+    	%>
+    	<!-- Les quatre syntaxes suivantes retournent le deuxième élément de la liste de légumes  -->
+        ${ legumes.get(1) }<br />
+        ${ legumes[1] }<br />
+        ${ legumes['1'] }<br />
+        ${ legumes["1"] }<br />
     </p>
     </body>
 </html>
