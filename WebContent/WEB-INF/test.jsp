@@ -1,3 +1,4 @@
+<%@page import="com.meddew.beans.Coyote"%>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -16,5 +17,13 @@
         	out.println("<br/>");
         	out.println("Auteur : "+auteur);
         %>
+        <p>
+        	Récupération du bean : 
+        	<%
+	        	com.meddew.beans.Coyote coyote = (com.meddew.beans.Coyote) request.getAttribute("coyote");
+	        	out.println("<br/>");
+	        	out.println("Coyote rusé : "+coyote.getNom()+" "+coyote.getPrenom());
+        	%>
+        </p>
     </body>
 </html>
