@@ -46,7 +46,9 @@ public class TestServlet extends HttpServlet {
 		//req.setAttribute("coyote3", coyote3);
 		req.setAttribute("coyote4", coyote4);
 		
-		System.out.print("Servlet Name : "+this.getServletName()); 
+		System.out.print("Servlet Name : "+this.getServletName());
+		int result = 14 >> 2;
+		System.out.println("14 >> 2 =  "+result); 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/test.jsp").forward(req, resp);
 	}
  
