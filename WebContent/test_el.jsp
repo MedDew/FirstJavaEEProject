@@ -1,3 +1,4 @@
+<%@ page isELIgnored ="true" %>
 <!DOCTYPE html>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -120,7 +121,7 @@
         
         request.setAttribute("desserts" , desserts);
         %>
-        
+    
         <!-- Les quatre syntaxes suivantes retournent la valeur associée à la clé "cookies" de la Map de desserts  -->
         ${ desserts.cookies }<br />
         ${ desserts.get("cookies") }<br />
