@@ -64,5 +64,15 @@
     			out.println(v);
     		}
     	%>
+    	<p>
+    		<%
+    			int jourDumois = (int) request.getAttribute("jourDuMois");
+    			if(jourDumois % 2 == 0){
+    				out.println("Jour pair : "+jourDumois);
+    			}else{
+    				out.println("Jour impair : "+jourDumois);
+    			}
+    		%>
+    	</p>
     </body>
 </html>
