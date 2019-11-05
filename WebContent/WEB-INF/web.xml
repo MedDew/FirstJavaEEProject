@@ -32,4 +32,13 @@
   	<servlet-name>TestServlet</servlet-name>
   	<url-pattern>/test</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>TestServlet EL ONLY</servlet-name>
+  	<servlet-class>com.meddew.servlet.TestServletElOnly</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestServlet EL ONLY</servlet-name>
+  	<url-pattern>/testElOnly</url-pattern>
+  </servlet-mapping>
 </web-app>
