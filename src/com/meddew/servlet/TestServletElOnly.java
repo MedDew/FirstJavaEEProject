@@ -28,8 +28,10 @@ public class TestServletElOnly extends HttpServlet {
 		
 		String[] arr = {"Un", "Deux", "Trois"};
 		req.setAttribute("arr", arr);
+		DateTime dateTime = new DateTime();
+		int jourDuMois = dateTime.getDayOfMonth();
 		
-		
+		req.setAttribute("jourDuMois", jourDuMois);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/test_el_only.jsp").forward(req, resp);
 	}
